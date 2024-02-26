@@ -26,7 +26,7 @@ def test(qid, func):
             passes += 1
         else:
             print("Error function failed test id", tid)
-
+    print()
     if len(questions[qid]) == passes:
         print(f"passed {passes}/{passes} test cases")
         print("All tests passed good job!")
