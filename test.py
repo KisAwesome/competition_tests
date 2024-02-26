@@ -28,8 +28,10 @@ def test(qid, func):
             print("Error function failed test id", tid)
 
     if len(questions[qid]) == passes:
+        print(f"passed {passes}/{passes}")
         print("All tests passed good job!")
     else:
+        print(f"passed {passes}/{questions[qid]}")
         print("Could not validate your code please debug and try again")
 
 
