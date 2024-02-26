@@ -13,7 +13,7 @@ def retrieve_test():
         import urllib.request
         import ssl
 
-        url = "https://drive.google.com/uc?id=1k6Gy1DUzFEhco-6MCDUEe--Cc31K260Z"
+        url = "https://raw.githubusercontent.com/KisAwesome/competition_tests/main/test.py"
 
         with urllib.request.urlopen(
             url, context=ssl._create_unverified_context()

@@ -1,5 +1,4 @@
 def test(qid, func):
-    assert callable(func), "Error ask for help"
     questions = {
         1: [
             ("hello world", 2),
