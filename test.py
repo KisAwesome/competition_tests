@@ -29,6 +29,8 @@ def test(qid, func):
 
     if len(questions[qid]) == passes:
         print("All tests passed good job!")
+    else:
+        print("Could not validate your code please debug and try again")
 
 
 def interactive_debug():
