@@ -1,12 +1,14 @@
+questions = {
+    1: [
+        ("hello world", 2),
+        ("lorem ipsum dolor sit amet", 5),
+        ("testing the code you wrote", 5),
+    ]
+}
+
+
 def test(qid, func):
     assert callable(func), "Error ask for help"
-    questions = {
-        1: [
-            ("hello world", 2),
-            ("lorem ipsum dolor sit amet", 5),
-            ("testing the code you wrote", 5),
-        ]
-    }
 
     passes = 0
 
@@ -27,3 +29,14 @@ def test(qid, func):
 
     if len(questions[qid]) == passes:
         print("All tests passed good job!")
+
+
+def interactive_debug():
+    while True:
+        inp = input("Enter question number to debug: ")
+        if inp.isdigit():
+            if int(inp) not in questions:
+                print("Question number does not exist")
+                continue
+            return int(inp)
+        print("Input must be a number")

@@ -1,13 +1,14 @@
 def retrieve_test():
-    def load_func(func):
-        globals()["test"] = func
+    def load_func(mod):
+        globals()["test"] = mod.test
+        globals()["interactive_debug"] = mod.interactive_debug
 
     import os
 
     if os.path.exists(os.path.join(os.path.dirname(__file__), "test_cases_cache.py")):
-        from test_cases_cache import test
+        import test_cases_cache
 
-        load_func(test)
+        load_func(test_cases_cache)
 
     else:
         import urllib.request
@@ -32,10 +33,9 @@ def retrieve_test():
                 print("Error please ask for help")
                 return
 
-        from test_cases_cache import test
+        import test_cases_cache
 
-        load_func(test)
+        load_func(test_cases_cache)
 
 
 retrieve_test()
-
