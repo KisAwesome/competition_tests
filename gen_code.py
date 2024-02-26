@@ -11,3 +11,13 @@ with open(get_file("test_cases.py"), "rb") as file:
         f.write(
             f'exec(__import__("base64").b64decode({base64.b64encode(file.read())}))'
         )
+        f.write("\n\n\n")
+        f.write(
+            """#Edit the arguments for each question
+def solution():
+    #Your code goes here
+    pass
+
+test(interactive_debug(), x)
+"""
+        )
