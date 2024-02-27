@@ -1,9 +1,33 @@
+import random
+
+
+def average(numbers):
+    if not numbers:
+        return 0
+    return sum(numbers) / len(numbers)
+
+
+def gen_rand_test_average_calculator():
+    t = []
+    x = []
+    for i in range(random.randint(1, 100)):
+        g = random.randint(0, 10000)
+        t.append(str(g))
+        x.append(g)
+
+    return (",".join(t), average(x))
+
+
 questions = {
     1: [
         ("hello world", 2),
         ("lorem ipsum dolor sit amet", 5),
         ("testing the code you wrote", 5),
-    ]
+        ("Hello\te", 2),
+        ("hello      testing\tg", 3),
+    ],
+    2: [gen_rand_test_average_calculator() for i in range(20)],
+    3: [],
 }
 
 
@@ -25,6 +49,7 @@ def test(qid, func):
         if stat:
             passes += 1
         else:
+            print(i[0])
             print("Error function failed test id", tid)
     print()
     if len(questions[qid]) == passes:
